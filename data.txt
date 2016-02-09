@@ -1,0 +1,10 @@
+AngularJS provides $http control which works as a service to read data from the server. The server makes a database call to get the desired records. AngularJS needs data in JSON format. Once the data is ready, $http can be used to get the data from server in the following manner −
+
+function studentController($scope,$http) {
+var url = "data.txt";
+
+   $http.get(url).success( function(response) {
+      $scope.students = response; 
+   });
+}
+Here, the file data.txt contains student records. $http service makes an ajax call and sets response to its property students. students model can be used to draw tables in HTML.

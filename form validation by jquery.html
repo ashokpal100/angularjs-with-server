@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <title>student form</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src = "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+  <script type="text/javascript" src="angular-route.min.js"></script>
+  <script type="text/javascript" src="javascript/form by jqueryjs.js"></script>
+  <link rel="stylesheet" href="css/form validation by jquery.css">
+</head>
+  <body ng-app="mainApp" ng-controller="myCtr">
+          <div class="container">
+                <div class="row">
+                      <div class="col-md-3 col-xs-0"></div>
+                      <div class="col-md-5 col-xs-12">
+                        <div class="register">
+                            <h3>Form Validation</h3>
+                        <form name="userForm" ng-submit="submitForm()" >
+                          <div class="form-group">
+                              <label >Name<i style="color:red">*</i></label>
+                              <input type="text" name="name" placeholder="Enter your name" ng-model="user.name"><i id="validitionMsg1"style="color:red;padding-left:150px;" ng-model="name1">{{msg1}}</i>
+                          </div>
+                          <div class="form-group">
+                              <label>Email<i style="color:red">*</i></label>
+                              <input type="email" name="email"placeholder="abc@xyz.com" ng-model="user.email"><i id="validitionMsg2"style="color:red;padding-left:150px;">{{msg2}}</i>
+                          </div>
+                          <div class="form-group">
+                              <label for="mobile">Mobile N.<i style="color:red">*</i></label>
+                              <input type="number" name="mobile"placeholder="enter your mobile number"ng-model="user.mobile"><i id="validitionMsg3"style="color:red;padding-left:150px;">{{msg3}}</i>
+                          </div>
+                          <div>
+                              <label for="gender" >Gender<i style="color:red">*</i></label>
+                              <input type="radio" name="gender" ng-model="user.gender" value="Male"> Male</input>
+                              <input type="radio" name="gender" ng-model="user.gender"value="Female"> Female</input><i id="validitionMsg4"style="color:red">  {{ msg4}}</i> 
+                          </div>
+                          <div class="form-group">
+                              <label for="gender" >Courses<i style="color:red">*</i></label>
+                              
+                                   <input type="checkbox" name="crsmca"ng-model="user.crsMca" ng-true-value="'MCA'"> MCA
+                                   <input type="checkbox" name="crsmba"ng-model="user.crsMba" ng-true-value="'MBA'"> MBA<i id="validitionMsg5"style="color:red">   {{msg5}}</i>
+                          </div>
+                          <div class="form-group">
+                              <label for="gender" >Year<i style="color:red">*</i></label>
+                              <select ng-model="user.year">
+                                 <option value="2015">2015</option>
+                                 <option value="2016">2016</option>
+                                 <option value="2017">2017</option>
+                              </select><i id="validitionMsg6"style="color:red">   {{msg6}}</i>
+                          </div>
+                          <div>
+                              <label for="address">Address<i style="color:red">*</i></label>
+                              <textarea   rows="3" cols="20" ng-model="user.address" name="address"></textarea><i id="validitionMsg7"style="color:red"> {{msg7}}</i>   
+                          </div>
+                          <div>
+                              <label></label>
+                              <input type="submit" value="Submit" class="button"/>
+                          </div>
+                        </form>
+                        </div>
+                      </div>
+                    <div class="col-md-3 col-xs-0"></div>
+                   
+            </div>
+        </div>
+</body>
+</html>

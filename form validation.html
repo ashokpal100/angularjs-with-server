@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <title>student form</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src = "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+  <script type="text/javascript" src="angular-route.min.js"></script>
+  <script type="text/javascript" src="javascript/form validation.js"></script>
+  <link rel="stylesheet" href="css/form validation.css">
+</head>
+  <body ng-app="mainApp" ng-controller="myCtr">
+          <div class="container">
+                <div class="row">
+                      <div class="col-md-3 col-xs-0"></div>
+                      <div class="col-md-5 col-xs-12">
+                        <div class="register">
+                            <h3>Form Validation</h3>
+
+                        <form name="userForm" ng-submit="submitForm()" novalidate>
+
+                              <div class="form-group">
+                                <label for="id">S_Id<i style="color:red">*</i></label>
+                                <input type="text" name="id" placeholder="enter the id id_a-z" ng-model="id" required ng-pattern="/^id_[a-z]+$/"></input>
+                                  <span style="color:red" class="custom-error" ng-show="userForm.id.$dirty && userForm.id.$invalid">
+                                      <i class="glyphicon glyphicon-remove"></i>
+                                     <span ng-show="userForm.id.$error.required">id is required.</span>
+                                     <span ng-show="userForm.id.$error.pattern">id doesn't respect the pattern(id_a-z).</span>
+                                  </span>
+
+                                  <span style="color:red" class="custom-error" ng-show="userForm.id.$dirty && userForm.id.$valid">
+                                      <i class="glyphicon glyphicon-ok"style="color:green"></i>
+                                  </span>
+                              </div>
+
+                              <div class="form-group"> 
+                                  <label for="name">Name<i style="color:red">*</i></label>
+                                  <input type="text" name="name" placeholder="Enter your name" ng-model="name"minlength="2"required>
+
+                                    <span style="color:red" ng-show="userForm.name.$dirty && userForm.name.$invalid || userForm.name.minlength">
+                                      <i class="glyphicon glyphicon-remove"></i>
+                                       <span ng-show="userForm.name.$error.required">Name is required.</span>
+                                       <span ng-show="userForm.name.$error.minlength">Must be 2 charactors or more</span>
+                                    </span>
+
+                                  <span style="color:red" ng-show="userForm.name.$dirty && userForm.name.$valid-required">
+                                     <i class="glyphicon glyphicon-ok "style="color:green"></i>
+                                 </span>
+                           </div>
+
+                          <div class="form-group">
+                              <label for="email">Email<i style="color:red">*</i></label>
+                              <input type="email" name="email"placeholder="abc@xyz.com" ng-model="email" required>
+                              <span style="color:red" ng-show="userForm.email.$dirty && userForm.email.$invalid">
+                                    <i class="glyphicon glyphicon-remove"></i>
+                                    <span style="color:red"ng-show="userForm.email.$error.required">Email is required.</span>
+                                    <span style="color:red"ng-show="userForm.email.$error.email">Invalid email address.</span>
+                            </span>
+                            <span style="color:red" ng-show="userForm.email.$dirty && userForm.email.$valid-required">
+                                    <i class="glyphicon glyphicon-ok"style="color:green"></i>
+                            </span>
+                          </div>
+
+                          <div class="form-group">
+                              <label for="mobile">Mobile N.<i style="color:red">*</i></label>
+                              <input type="number" name="mobile"placeholder="enter your mobile number"ng-model="mobileNum" minlength="10"maxlength="10" required>
+                              <span style="color:red"ng-show="userForm.mobile.$dirty&& userForm.mobile.$invalid"> 
+                                <i class="glyphicon glyphicon-remove"></i>
+                                <span style="color:red"ng-show="userForm.mobile.$error.required">Mobile no. is required.</span>
+                                <span style="color:red"ng-show=" userForm.mobile.$invalid">Mobile number is invalid</span>
+                             </span>
+                             <span style="color:red"ng-show=" userForm.mobile.$dirty&&userForm.mobile.$valid-required"><i class="glyphicon glyphicon-ok"style="color:green"></i></span>
+                          </div>
+
+                          <div class="form-group">
+                              <label for="gender" >Gender<i style="color:red">*</i></label>
+                              <input type="radio" ng-model="gender" value="Male" required> Male
+                              <input type="radio" ng-model="gender" value="Female" required> Female
+                              <span ng-switch="gender">
+                                <i ng-switch-when="Male" class="glyphicon glyphicon-ok"style="color:green"></i>
+                                <i ng-switch-when="Female" class="glyphicon glyphicon-ok"style="color:green"></i>
+                              </span>
+                          </div>
+
+                          <div class="form-group">
+                              <label for="gender" >Courses<i style="color:red">*</i></label>
+                              
+                                   <input type="checkbox" name="crsmca"ng-model="crsmca" required> MCA
+                                   <input type="checkbox" name="crsmba"ng-model="crsmba" required> MBA
+                               <span style="color:red" ng-show="userForm.crsmca.$touched && userForm.crsmca.$invalid && userForm.crsmba.$touched && userForm.crsmba.$invalid">
+                                  <i class="glyphicon glyphicon-remove"></i><span>Course is required</span>
+                                </span>
+                                 <span ng-show="userForm.crsmca.$valid || userForm.crsmba.$valid">
+                                  <i class="glyphicon glyphicon-ok"style="color:green"></i>
+                                </span>
+
+                             
+                              
+                          </div>
+                          <div class="form-group">
+                              <label for="gender" >Year<i style="color:red">*</i></label>
+                              <select ng-model="year" required>
+                                 <option value="16"></option>
+                                 <option value="2015">2015</option>
+                                 <option value="2016">2016</option>
+                                 <option value="2017">2017</option>
+                              </select>
+                                  <span ng-switch="year">
+                                      <i class="glyphicon glyphicon-remove" ng-switch-when="16"style="color:red"><span>  Year is required.</span>
+                                      </i>
+                                      <i class="glyphicon glyphicon-ok"ng-switch-when="2015"style="color:green"></i>
+                                      <i class="glyphicon glyphicon-ok"ng-switch-when="2016"style="color:green"></i>
+                                      <i class="glyphicon glyphicon-ok"ng-switch-when="2017"style="color:green"></i>
+                                  </span>
+                          </div>
+                          <div class="form-group">
+                              <label for="address">Address<i style="color:red">*</i></label>
+                              <textarea ng-model="address" name="address" minlength="1" required></textarea>
+
+                              <span class="error-wrapper" ng-show="userForm.address.$dirty && userForm.address.$invalid">
+                                       <i class="glyphicon glyphicon-remove"style="color:red"></i>
+                                       <span style="color:red">Address is required.</span>
+                              </span>
+
+                              <span style="color:red" ng-show="userForm.address.$dirty && userForm.address.$valid-required">
+                                     <i class="glyphicon glyphicon-ok "style="color:green"></i>
+                              </span>     
+                                 
+                          </div>
+
+                          <div>
+                              <label></label>
+                              <input type="submit" value="Submit" class="button "ng-disabled="userForm.name.$invalid &&userForm.id.$invalid&&userForm.email.$invalid"/>
+
+                          </div>
+                        </form>
+                       
+                        </div>
+                      </div>
+                    <div class="col-md-3 col-xs-0"></div>
+                   
+            </div>
+        </div>
+</body>
+</html>

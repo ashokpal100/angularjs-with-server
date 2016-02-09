@@ -1,0 +1,61 @@
+.register {
+  	margin: 10px auto;
+  	padding: 10px;
+  	border: 27px solid $green-border;
+  	border-color: green;
+  	border-radius: 20px;
+  	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	  color: #444;
+  	background-color: #F5F5DC;
+  	box-shadow: 0 0 8px 1px black;
+
+  }
+  	
+  h3{
+	  	margin: 0 15px 20px;
+	  	border-bottom: 2px solid;
+      text-align: center;
+	  	border-color-bottom: green;
+	  	padding: 5px 10px 5px 0;
+	  	font-size: 2.1em;
+      color: black;
+      font-weight: bold;
+	}
+
+	div{
+		margin: 0 0 15px 0;
+	  	border : none;
+	}
+
+	label{
+	  	display: inline-block;
+	  	width: 25%;
+            color: black;
+	  	font-family: "Bookman", serif;
+	  	text-align: center;
+	  	margin: 10px
+
+	}
+	input[type=text], input[type=password],input[type=number],input[type=email]{
+  		width: 65%; 
+  		font-family: "Lucida Grande","Lucida Sans Unicode",Tahoma,Sans-Serif;
+  		padding: 5px;
+  		font-size: 0.9em;
+  		border-radius: 5px;
+      background-color: white;
+  		background: (0, 0, 0, 0.07);
+	}
+  
+
+{
+  margin-left: 160px;
+}
+	.button {
+  		font-size: 1em;
+  		border-radius: 8px;
+  		padding: 10px;
+  		border: 1px solid #59B969;
+  		box-shadow: 0 1px 0 0 #60BD49 inset;
+  		
+	}
+	
