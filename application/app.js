@@ -1,10 +1,8 @@
 var mainapp = angular.module('mainApp', []);
     mainapp.controller('myCtr', function($scope) {
-      
+      $scope.user={};
       $scope.submitLogin= function() 
       {
-        alert("hi");
-         $scope.loginfm={};
-         console.log($scope.loginfm.user);
+         console.log($scope.user);
      };
 });

@@ -25,15 +25,15 @@
                 <div id="container_demo" >
                     <div id="wrapper">
                         <div id="login" class="animate form">
-                            <form  action=""> 
+                            <form  action="profile.html"> 
                                 <h1>Log in</h1> 
                                 <p> 
                                     <label> Your User Name </label>
-                                    <input name="username" ng-model="loginfm.user"required type="text" placeholder="user name" class="form-control"/>
+                                    <input name="user"  ng-model="user.name"required type="text" placeholder="user name" class="form-control"/>
                                 </p>
                                 <p> 
                                     <label> Your password </label>
-                                    <input name="password" ng-model="loginfm.password"required type="password" placeholder="eg. X8df!90EO" class="form-control"/> 
+                                    <input name="password" ng-model="user.password"required type="password" placeholder="eg. X8df!90EO" class="form-control"/> 
                                 <p class="login button"> 
                                     <input type="submit" value="Login" ng-click="submitLogin()"/> 
                                 </p>

@@ -1,0 +1,114 @@
+
+                        <div class="register">
+                          <p  style="font-size: 1.9em;text-align: center;color: black;font-weight: bold;">Personal Details</p>
+                        <form name="personalForm" ng-submit="submitForm()" novalidate>
+                              <div class="form-group"> 
+                                  <label for="fname">First Name<i style="color:red">*</i></label>
+                                  <input type="text" name="fname" placeholder="Enter your first name" ng-model="user.fname"required>
+
+                                    <span style="color:red" ng-show="personalForm.fname.$dirty && personalForm.fname.$invalid">
+                                      <i class="glyphicon glyphicon-remove"></i>
+                                       <span ng-show="personalForm.fname.$error.required">first Name is required.</span>
+                                    </span>
+
+                                  <span style="color:red" ng-show="personalForm.fname.$dirty && personalForm.fname.$valid-required">
+                                     <i class="glyphicon glyphicon-ok "style="color:green"></i>
+                                 </span>
+                           </div>
+                           <div class="form-group">
+                                <label for="lname">Last Name<i style="color:red">*</i></label>
+                                <input type="text" name="lname" placeholder="enter the last name" ng-model="user.lname" required></input>
+                                  <span style="color:red" class="custom-error" ng-show="personalForm.lname.$dirty && personalForm.lname.$invalid">
+                                      <i class="glyphicon glyphicon-remove"></i>
+                                     <span ng-show="personalForm.lname.$error.required">last name is required.</span>
+                                  </span>
+                                  <span style="color:red" class="custom-error" ng-show="personalForm.lname.$dirty && personalForm.lname.$valid">
+                                      <i class="glyphicon glyphicon-ok"style="color:green"></i>
+                                  </span>
+                              </div>
+
+                          <div class="form-group">
+                              <label for="email">Email<i style="color:red">*</i></label>
+                              <input type="email" name="email"placeholder="abc@xyz.com" ng-model="user.email" required>
+                              <span style="color:red" ng-show="personalForm.email.$dirty && personalForm.email.$invalid">
+                                    <i class="glyphicon glyphicon-remove"></i>
+                                    <span style="color:red"ng-show="personalForm.email.$error.required">Email is required.</span>
+                                    <span style="color:red"ng-show="personalForm.email.$error.email">Invalid email address.</span>
+                            </span>
+                            <span style="color:red" ng-show="personalForm.email.$dirty && personalForm.email.$valid-required">
+                                    <i class="glyphicon glyphicon-ok"style="color:green"></i>
+                            </span>
+                          </div>
+                          
+                          <div class="form-group">
+                              <label for="mobile">Mobile N.<i style="color:red">*</i></label>
+                              <input type="number" name="mobile"placeholder="enter your mobile number"ng-model="user.mobile" minlength="10"maxlength="10" required>
+                              <span style="color:red"ng-show="personalForm.mobile.$dirty&& personalForm.mobile.$invalid"> 
+                                <i class="glyphicon glyphicon-remove"></i>
+                                <span style="color:red"ng-show="personalForm.mobile.$error.required">Mobile no. is required.</span>
+                                <span style="color:red"ng-show="personalForm.mobile.$error.minlength">Mobile number is invalid</span>
+                             </span>
+                             <span style="color:red"ng-show="personalForm.mobile.$dirty&&personalForm.mobile.$valid">
+                              <i class="glyphicon glyphicon-ok"style="color:green"></i></span>
+                          </div>
+                          <div class="form-group"> 
+                                  <label for="address1">Address Line1<i style="color:red">*</i></label>
+                                  <input type="text" name="address1" placeholder="Enter your address1" ng-model="user.address1"required>
+
+                                    <span style="color:red" ng-show="personalForm.address1.$dirty && personalForm.address1.$invalid">
+                                      <i class="glyphicon glyphicon-remove"></i>
+                                       <span ng-show="personalForm.address1.$error.required">Addess is required.</span>
+                                    </span>
+
+                                  <span style="color:red" ng-show="personalForm.address1.$dirty && personalForm.address1.$valid-required">
+                                     <i class="glyphicon glyphicon-ok "style="color:green"></i>
+                                 </span>
+                           </div>
+                           <div class="form-group"> 
+                                  <label for="address2">Address Line2</label>
+                                  <input type="text" name="address2" placeholder="Enter your address2" ng-model="user.address2">
+                           </div>
+                           <div class="form-group"> 
+                                  <label for="address3">Address Line3</label>
+                                  <input type="text" name="address3" placeholder="Enter your address3" ng-model="user.address3">
+                           </div>
+                          <div class="form-group">
+                              <label for="city" >City</label>
+                              <select ng-model="user.city">
+                                 <option value="gurgaon">Gurgaon</option>
+                                 <option value="delhi">Delhi</option>
+                                 <option value="noida">Noida</option>
+                                 <option value="gwalior">Gwalior</option>
+                              </select>
+                              <label for="state" >State</label>
+                              <select ng-model="user.state">
+                                 <option value="delhi">Delhi</option>
+                                 <option value="mp">M.P.</option>
+                                 <option value="up">U.P.</option>
+                                 <option value="haryana">Haryana</option>
+                              </select>
+                                  
+                          </div>
+                          <div class="form-group">
+                              <label for="country">Country</label>
+                              <select ng-model="user.country">
+                                 <option value="india">India</option>
+                                 <option value="us">US</option>
+                                 <option value="america">America</option>
+                                 <option value="nepal">Nepal</option>
+                              </select>
+                                  
+                          </div>
+                          <div class="form-group"> 
+                                  <label for="pincode">Pin Code</label>
+                                  <input type="number" name="pincode" placeholder="Enter your pin code" ng-model="user.pincode"minlength="4"required>
+                           </div>
+                          <div>
+                              <label></label>
+                              <input type="submit" value="Submit" class="button "ng-disabled=" personalForm.fname.$invalid && personalForm.lname.$invalid &&personalForm.email.$invalid && personalForm.mobile.$invalid && personalForm.address1.$invalid"/>
+
+                          </div>
+                        </form>
+                       
+                        </div>
+  

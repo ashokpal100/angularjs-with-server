@@ -1,0 +1,52 @@
+
+                        <div class="register">
+                          <p  style="font-size: 1.9em;text-align: center;color: black;font-weight: bold;">Qualification Detail</p>
+                        <form name="qualificationForm" ng-submit="submitForm()" novalidate>
+
+                              <div class="form-group">
+                                <label>Institute Name<i style="color:red">*</i></label>
+                                <input type="text" name="institute" placeholder="enter the institute name" ng-model="qua.institute" required></input>
+                                  <span style="color:red" class="custom-error" ng-show="qualificationForm.institute.$dirty && qualificationForm.institute.$invalid">
+                                      <i class="glyphicon glyphicon-remove"></i>
+                                     <span ng-show="qualificationForm.institute.$error.required">institute name is required.</span>
+                                  </span>
+                                  <span style="color:red" class="custom-error" ng-show="qualificationForm.institute.$dirty && qualificationForm.institute.$valid">
+                                      <i class="glyphicon glyphicon-ok"style="color:green"></i>
+                                  </span>
+                              </div>
+                              <div class="form-group"> 
+                                  <label >Degree Name<i style="color:red">*</i></label>
+                                  <input type="text" name="degree" placeholder="Enter your degree name" ng-model="qua.degree"required>
+
+                                    <span style="color:red" ng-show="qualificationForm.degree.$dirty &&qualificationForm.degree.$invalid">
+                                      <i class="glyphicon glyphicon-remove"></i>
+                                       <span ng-show="qualificationForm.degree.$error.required">degree Name is required.</span>
+                                    </span>
+
+                                  <span style="color:red" ng-show="qualificationForm.degree.$dirty && qualificationForm.degree.$valid-required">
+                                     <i class="glyphicon glyphicon-ok "style="color:green"></i>
+                                 </span>
+                           </div>
+
+                          <div class="form-group">
+                              <label>Year<i style="color:red">*</i></label>
+                              <select ng-model="qua.year" required>
+                                 <option value="16"></option>
+                                 <option value="2015">2015</option>
+                                 <option value="2016">2016</option>
+                                 <option value="2017">2017</option>
+                              </select>
+                                  <span ng-switch="year">
+                                      <i class="glyphicon glyphicon-remove" ng-switch-when="16"style="color:red"><span>  Year is required.</span>
+                                      </i>
+                                      <i class="glyphicon glyphicon-ok"ng-switch-when="2015"style="color:green"></i>
+                                      <i class="glyphicon glyphicon-ok"ng-switch-when="2016"style="color:green"></i>
+                                      <i class="glyphicon glyphicon-ok"ng-switch-when="2017"style="color:green"></i>
+                                  </span>
+                          </div>
+                              <label></label>
+                              <input type="submit" value="Submit" class="button "ng-disabled="qualificationForm.institute.$invalid && qualificationForm.degree.$invalid "/>
+
+                          </div>
+                        </form>
+            
