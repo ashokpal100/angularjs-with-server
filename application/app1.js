@@ -1,19 +1,19 @@
 var profileApp = angular.module('profileApp', ['ui.router']);
 
 profileApp.config(function($stateProvider, $urlRouterProvider) {
-    
+    $urlRouterProvider.otherwise('/personal');
     $stateProvider
         
         // PROFILE STATES ========================================
-        .state('Personal', {
-            url: '/Personal',
+        .state('personal', {
+            url: '/personal',
             templateUrl: 'profile-Personal.html',
             controller: 'personalCtr'
             
         })
         
-        .state('Qualification', {
-            url: '/Qualification',
+        .state('qualification', {
+            url: '/qualification',
             templateUrl: 'profile-Qualification.html',
             controller: 'qualificationCtr'
         })
@@ -40,8 +40,18 @@ profileApp.controller('qualificationCtr', function($scope) {
 });
 profileApp.controller('passwordCtr', function($scope) {
       $scope.password={};
+      
       $scope.submitForm = function() 
       {
-        console.log($scope.password);
+         if (($scope.password.newpassword)==($scope.password.repeatpassword)) 
+         {
+            $("#validitionMsg").hide();
+              console.log($scope.password);
+         } else
+         {
+
+           $scope.msg='password not match';
+            $("#validitionMsg").show();
+         };
     };
 });
